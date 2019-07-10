@@ -6,7 +6,9 @@ jobs 分布式任务调度平台 admin 管理界面
 JAVA 后台：<a target="_blank" href="https://gitee.com/baomidou/jobs">jobs</a>
 
 ### 启动运行
+
 yarn
+
 yarn serve
 
 ### 界面效果
