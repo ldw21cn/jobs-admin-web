@@ -70,14 +70,6 @@ export default [
     )
   },
   {
-    path: '/executor',
-    meta: { breadcrumb: true },
-    name: 'Executor',
-    component: () => import(
-      `@/views/Executor.vue`
-    )
-  },
-  {
     path: '/job',
     meta: { breadcrumb: true },
     name: 'Job',

@@ -167,7 +167,7 @@
 </template>
 
 <script>
-    import { jobInfo } from '../api';
+    import { jobsInfo } from '../api';
 
     export default {
         data() {
@@ -219,7 +219,7 @@
         },
         methods: {
             _page: async function() {
-                const result = await jobInfo.page(
+                const result = await jobsInfo.page(
                     { }
                 )
                 if (result) {
@@ -238,9 +238,9 @@
             _start: async function() {
                 var result;
                 if (this.dialogStart) {
-                    result = await jobInfo.start(this.dialogId)
+                    result = await jobsInfo.start(this.dialogId)
                 } else {
-                    result = await jobInfo.stop(this.dialogId)
+                    result = await jobsInfo.stop(this.dialogId)
                 }
                 if (result) {
                     this.dialog = false
@@ -253,7 +253,7 @@
             },
             _execute: async function() {
                 const param = document.getElementById("param").value
-                const result = jobInfo.execute(this.dialogId, param);
+                const result = jobsInfo.execute(this.dialogId, param);
                 if (result) {
                     this.executeDialog = false
                     this._success()
@@ -264,7 +264,7 @@
                 this.dialogId = id;
             },
             _remove: async function() {
-                const result = jobInfo.remove(this.dialogId);
+                const result = jobsInfo.remove(this.dialogId);
                 if (result) {
                     this.removeDialog = false
                     this._success()

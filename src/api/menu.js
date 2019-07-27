@@ -10,11 +10,6 @@ const Menu =  [
     name: 'Job',
   },
   {
-    title: '执行器管理',
-    icon: 'hourglass_full',
-    name: 'Executor',
-  },
-  {
     title: '调度日志',
     icon: 'bug_report',
     name: 'Log',

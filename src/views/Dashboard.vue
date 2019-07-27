@@ -59,7 +59,7 @@
     import MiniStatistic from '@/components/widgets/statistic/MiniStatistic';
     import VWidget from '@/components/VWidget';
     import Material from 'vuetify/es5/util/colors';
-    import {jobStatistics} from '../api';
+    import {jobsStatistics} from '../api';
 
     export default {
         components: {
@@ -98,13 +98,13 @@
         },
         methods: {
             _getImportantNum: async function () {
-                const data = await jobStatistics.getImportantNum()
+                const data = await jobsStatistics.getImportantNum()
                 this.runTaskNum = data.runTaskNum + ''
                 this.triggeredNum = data.triggeredNum + ''
                 this.onlineExecutorNum = data.onlineExecutorNum + ''
             },
             _getSuccessRatio: async function () {
-                const data = await jobStatistics.getSuccessRatio()
+                const data = await jobsStatistics.getSuccessRatio()
                 this.successRatio = {
                     columns: ['name', 'value'],
                     rows: [

@@ -63,7 +63,7 @@
 </template>
 
 <script>
-    import {jobLog} from '../api';
+    import {jobsLog} from '../api';
 
     export default {
         data: () => ({
@@ -122,7 +122,7 @@
                 console.log('-----descending----', descending)
                 console.log('-----pagination----', this.pagination)
                 this.loading = true
-                const data = await jobLog.page({params: {page: page, rows: rowsPerPage}})
+                const data = await jobsLog.page({params: {page: page, rows: rowsPerPage}})
                 this.desserts = data.records
                 this.totalDesserts = data.total
                 this.loading = false

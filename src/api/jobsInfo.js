@@ -3,7 +3,7 @@
  */
 import http from './http'
 
-const url = '/v1/job-info'
+const url = '/v1/jobs-info'
 
 export default {
   page: data => http.get(url + '/page', data).then(res => res),

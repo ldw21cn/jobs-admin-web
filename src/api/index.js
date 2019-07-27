@@ -5,7 +5,6 @@ export default {
   getUserById: {},
 };
 
-export { default as jobInfo } from './jobInfo'
-export { default as jobGroup } from './jobGroup'
-export { default as jobLog } from './jobLog'
-export { default as jobStatistics } from './jobStatistics'
+export { default as jobsInfo } from './jobsInfo'
+export { default as jobsLog } from './jobsLog'
+export { default as jobsStatistics } from './jobsStatistics'
