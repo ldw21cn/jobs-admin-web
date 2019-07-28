@@ -73,17 +73,7 @@
             chartSettings: {
                 showLine: ['成功']
             },
-            chartData: {
-                columns: ['日期', '执行', '成功', '失败'],
-                rows: [
-                    { '日期': '1/1', '执行': 1393, '成功': 1093, '失败': 12 },
-                    { '日期': '1/2', '执行': 3530, '成功': 3230, '失败': 26 },
-                    { '日期': '1/3', '执行': 2923, '成功': 2623, '失败': 76 },
-                    { '日期': '1/4', '执行': 1723, '成功': 1423, '失败': 49 },
-                    { '日期': '1/5', '执行': 3792, '成功': 3492, '失败': 323 },
-                    { '日期': '1/6', '执行': 4593, '成功': 4293, '失败': 78 }
-                ]
-            },
+            chartData: {},
             successRatio: {},
             color: Material
         }),
@@ -94,6 +84,7 @@
         },
         mounted() {
             this._getImportantNum()
+            this._getDateDistribution()
             this._getSuccessRatio()
         },
         methods: {
@@ -103,14 +94,26 @@
                 this.triggeredNum = data.triggeredNum + ''
                 this.onlineExecutorNum = data.onlineExecutorNum + ''
             },
+            _getDateDistribution: async function () {
+                const data = await jobsStatistics.getDateDistribution()
+                let tmp = [];
+                if (data) {
+                    data.forEach(function (d) {
+                        tmp.push({'日期': d.atDate, '成功': d.successful, '失败': d.failed});
+                    })
+                }
+                this.chartData = {
+                    columns: ['日期', '成功', '失败'],
+                    rows: tmp
+                }
+            },
             _getSuccessRatio: async function () {
                 const data = await jobsStatistics.getSuccessRatio()
                 this.successRatio = {
                     columns: ['name', 'value'],
                     rows: [
-                        { 'name': '成功', 'value': data.successful },
-                        { 'name': '进行中', 'value': data.inProgress },
-                        { 'name': '失败', 'value': data.failed }
+                        {'name': '成功', 'value': data.successful},
+                        {'name': '失败', 'value': data.failed}
                     ]
                 }
             }

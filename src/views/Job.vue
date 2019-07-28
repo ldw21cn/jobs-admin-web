@@ -47,11 +47,17 @@
                                         ></v-checkbox>
                                     </td>
                                     <td>{{ props.item.id }}</td>
-                                    <td>{{ props.item.jobDesc }}</td>
-                                    <td>{{ props.item.executorRouteStrategy }}</td>
-                                    <td>{{ props.item.jobCron }}</td>
+                                    <td>{{ props.item.app }}</td>
                                     <td>{{ props.item.author }}</td>
-                                    <td v-if="props.item.triggerStatus === 0">
+                                    <td>{{ props.item.cron }}</td>
+                                    <td>{{ props.item.param }}</td>
+                                    <td>{{ props.item.remark }}</td>
+                                    <td>{{ props.item.failRetryCount }}</td>
+                                    <td>{{ props.item.handler }}</td>
+                                    <td>{{ $dateformat(props.item.lastTime) }}</td>
+                                    <td>{{ $dateformat(props.item.nextTime) }}</td>
+                                    <td>{{ $dateformat(props.item.updateTime) }}</td>
+                                    <td v-if="props.item.status === 0">
                                         <v-chip color="red" text-color="white">停止</v-chip>
                                     </td>
                                     <td v-else>
@@ -186,24 +192,48 @@
                             value: 'id'
                         },
                         {
-                            text: '任务描述',
-                            value: 'jobDesc'
+                            text: 'app',
+                            value: 'app'
                         },
                         {
-                            text: '运行模式',
-                            value: 'executorRouteStrategy'
-                        },
-                        {
-                            text: 'Cron',
-                            value: 'jobCron'
-                        },
-                        {
-                            text: '负责人',
+                            text: '作者',
                             value: 'author'
                         },
                         {
-                            text: '运行状态',
-                            value: 'triggerStatus'
+                            text: 'cron',
+                            value: 'cron'
+                        },
+                        {
+                            text: '参数',
+                            value: 'param'
+                        },
+                        {
+                            text: '备注',
+                            value: 'remark'
+                        },
+                        {
+                            text: '失败次数',
+                            value: 'failRetryCount'
+                        },
+                        {
+                            text: '处理器',
+                            value: 'handler'
+                        },
+                        {
+                            text: '最后一次执行时间',
+                            value: 'lastTime'
+                        },
+                        {
+                            text: '下次执行时间',
+                            value: 'nextTime'
+                        },
+                        {
+                            text: '更新时间',
+                            value: 'updateTime'
+                        },
+                        {
+                            text: '执行状态',
+                            value: 'status'
                         },
                         {
                             text: '操作',

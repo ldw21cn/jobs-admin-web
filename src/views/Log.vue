@@ -45,13 +45,12 @@
                                         ></v-checkbox>
                                     </td>
                                     <td>{{ props.item.jobId }}</td>
-                                    <td>{{ $dateformat(props.item.triggerTime) }}</td>
-                                    <td>{{ props.item.triggerCode }}</td>
-                                    <td>{{ props.item.triggerMsg?'查看':'-' }}</td>
-                                    <!--                                    <td>{{ props.item.triggerMsg }}</td>-->
-                                    <td>{{ $dateformat(props.item.handleTime) }}</td>
-                                    <td>{{ props.item.handleCode }}</td>
-                                    <td>{{ props.item.handleMsg }}</td>
+                                    <td>{{ props.item.handler}}</td>
+                                    <td>{{ props.item.triggerType}}</td>
+                                    <td>{{ props.item.triggerCode}}</td>
+                                    <td>{{ props.item.triggerMsg}}</td>
+                                    <td>{{ props.item.failRetryCount }}</td>
+                                    <td>{{ $dateformat(props.item.createTime) }}</td>
                                 </template>
                             </v-data-table>
                         </v-card-text>
@@ -79,8 +78,12 @@
                     value: 'jobId'
                 },
                 {
-                    text: '调度时间',
-                    value: 'triggerTime'
+                    text: '处理器',
+                    value: 'handler'
+                },
+                {
+                    text: '触发类型',
+                    value: 'triggerType'
                 },
                 {
                     text: '调度结果',
@@ -91,16 +94,12 @@
                     value: 'triggerMsg'
                 },
                 {
+                    text: '失败次数',
+                    value: 'failRetryCount'
+                },
+                {
                     text: '执行时间',
-                    value: 'handleTime'
-                },
-                {
-                    text: '执行结果',
-                    value: 'handleCode'
-                },
-                {
-                    text: '执行备注',
-                    value: 'handleMsg'
+                    value: 'createTime'
                 }
             ]
         }),

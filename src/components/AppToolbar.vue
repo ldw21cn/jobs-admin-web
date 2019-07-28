@@ -15,7 +15,7 @@
         </v-btn>
       </v-toolbar-items>
 
-      <v-btn icon href="https://github.com/tookit/vue-material-admin">
+      <v-btn icon target="_blank" href="https://github.com/baomidou/jobs">
         <v-icon class="fa-2x">fa-github</v-icon>
       </v-btn>
       <v-btn icon @click="handleFullScreen()">

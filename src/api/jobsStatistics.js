@@ -7,5 +7,6 @@ const url = '/v1/jobs-statistics'
 
 export default {
   getImportantNum: () => http.get(url + '/important-num').then(res => res),
+  getDateDistribution: () => http.get(url + '/date-distribution').then(res => res),
   getSuccessRatio: () => http.get(url + '/success-ratio').then(res => res)
 }
