@@ -3,7 +3,7 @@
 #### 介绍
 jobs 分布式任务调度平台 admin 管理界面
 
-JAVA 后台：<a target="_blank" href="https://gitee.com/baomidou/jobs">jobs</a>
+JAVA 后台：<a target="_blank" href="https://github.com/ldw21cn/jobs">jobs</a>
 
 ### 启动运行
 
